@@ -80,6 +80,7 @@ External.prototype._read = function(){
   imgStream.on('response', function(response) {
     if (response.statusCode !== 200) {
       _this.image.error = new Error('Error ' + response.statusCode + ':');
+      _this.image.error.statusCode = response.statusCode;
     }
   });
   imgStream.on('end', function(){
