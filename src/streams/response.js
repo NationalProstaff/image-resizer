@@ -65,7 +65,7 @@ ResponseWriter.prototype._write = function(image){
 
   if (this.shouldCacheResponse()){
     this.response.set({
-      'Cache-Control': 'max-age=' + String(image.expiry)
+      'Cache-Control': 'max-age=' + String(image.expiry) + ', s-maxage=' + String(image.expiry)
     });
   }
 
